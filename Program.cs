@@ -5,6 +5,7 @@ namespace Calculator
 {
     class Program
     {
+        static public short resposta;
         static void Main(string[] args)
         {
             Menu();
@@ -12,35 +13,38 @@ namespace Calculator
 
         static void Menu()
         {
-            Console.Clear();
-
-            Console.WriteLine("Qual operação matemática você deseja realizar?");
-            Console.WriteLine("1 - Soma");
-            Console.WriteLine("2 - Subtração");
-            Console.WriteLine("3 - Divisão");
-            Console.WriteLine("4 - Multiplicação");
-            Console.WriteLine("5 - Sair");
-
-            Console.WriteLine("---------------------------------------------");
-            Console.Write("Selecione uma opção: ");
-            short res = short.Parse(Console.ReadLine());
-
-            switch (res)
+            do
             {
-                case 1:
-                    Soma(); break;
-                case 2:
-                    Subtracao(); break;
-                case 3:
-                    Divisao(); break;
-                case 4:
-                    Multiplicacao(); break;
-                case 5:
-                    //finalizar execução
-                    System.Environment.Exit(0); break;
-                default:
-                    Console.WriteLine("Opção incorreta!"); Menu(); break;
-            }
+                Console.Clear();
+                Console.WriteLine("Qual operação matemática você deseja realizar?");
+                Console.WriteLine("1 - Soma");
+                Console.WriteLine("2 - Subtração");
+                Console.WriteLine("3 - Divisão");
+                Console.WriteLine("4 - Multiplicação");
+                Console.WriteLine("5 - Sair");
+
+                Console.WriteLine("---------------------------------------------");
+                Console.Write("Selecione uma opção: ");
+                resposta = short.Parse(Console.ReadLine());
+
+                switch (resposta)
+                {
+                    case 1:
+                        Soma(); break;
+                    case 2:
+                        Subtracao(); break;
+                    case 3:
+                        Divisao(); break;
+                    case 4:
+                        Multiplicacao(); break;
+                    case 5:
+                        //finalizar execução
+                        System.Environment.Exit(0); break;
+                    default:
+                        Console.WriteLine("Opção incorreta!"); break;
+                }
+            } while (resposta != 5);
+
 
         }
 
@@ -58,7 +62,6 @@ namespace Calculator
 
             Console.WriteLine($"O resultado da soma é: {resultado}");
             Console.ReadKey();
-            Menu();
         }
 
         static void Subtracao()
@@ -75,7 +78,6 @@ namespace Calculator
 
             Console.WriteLine($"O resultado da subtração é: {resultado}");
             Console.ReadKey();
-            Menu();
         }
 
         static void Divisao()
@@ -92,7 +94,6 @@ namespace Calculator
             Console.WriteLine("");
             Console.WriteLine($"O resultado da divisão é: {resultado}");
             Console.ReadKey();
-            Menu();
         }
 
         static void Multiplicacao()
@@ -110,7 +111,6 @@ namespace Calculator
             Console.WriteLine("");
             Console.WriteLine($"O resultado da Multiplicação é: {resultado}");
             Console.ReadKey();
-            Menu();
         }
     }
 }
