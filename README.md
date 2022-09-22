@@ -1,4 +1,4 @@
-# Calculadora com todas as operações via console usando .NET
+# Calculadora com todas as operações via console usando .NET E C#
 
 - Funções de: Soma, Subtração, Divisão e Multiplicação.
 - Métodos: Foi utilizado uma função para cada operação no qual a função Main chama a função Menu, 
